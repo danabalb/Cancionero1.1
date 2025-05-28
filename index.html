@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancionero</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <div class="container mx-auto py-6 px-4">
+        <h1 class="text-3xl font-bold text-center mb-6">Cancionero</h1>
+
+        <!-- Formulario para agregar o modificar canciones -->
+        <div class="bg-white p-6 rounded shadow mb-6">
+            <h2 class="text-xl font-semibold mb-4" id="form-title">Agregar Canción</h2>
+            <form id="song-form" class="space-y-4">
+                <div>
+                    <label for="title" class="block text-sm font-medium text-gray-700">Título</label>
+                    <input type="text" id="title" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
+                </div>
+                <div>
+                    <label for="author" class="block text-sm font-medium text-gray-700">Autor</label>
+                    <input type="text" id="author" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="key" class="block text-sm font-medium text-gray-700">Tonalidad</label>
+                        <input type="text" id="key" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
+                    </div>
+                    <div>
+                        <label for="bpm" class="block text-sm font-medium text-gray-700">BPM</label>
+                        <input type="number" id="bpm" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="body" class="block text-sm font-medium text-gray-700">Letra (con acordes)</label>
+                    <textarea id="body" rows="6" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="Verso, Puente, Coro, etc." required></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Guardar Canción</button>
+                <button type="button" id="cancel-edit" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 hidden">Cancelar</button>
+            </form>
+        </div>
+
+        <!-- Lista de canciones -->
+        <div class="bg-white p-6 rounded shadow">
+            <h2 class="text-xl font-semibold mb-4">Lista de Canciones</h2>
+            <input type="text" id="search" placeholder="Buscar canción..." class="mb-4 block w-full border-gray-300 rounded-md shadow-sm">
+            <ul id="song-list" class="space-y-4">
+                <!-- Canciones listadas dinámicamente -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
